@@ -81,7 +81,11 @@
 					</div>
 				</div>
 				<div class="col-lg-6" data-aos="zoom-in-up">
-					<img src="images/banner-pic.png" alt="Banner" class="img-fluid">
+					<img src="images/LCH-25_2.jpg" 
+						alt="Banner" 
+						class="img-fluid rounded" 
+						style="transform: scale(0.65); 
+								box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
 				</div>
 			</div>
 		</div>
@@ -588,15 +592,21 @@
 		</div>
 	</section> -->
 
-	<section class="padding-large bg-grey">
+	<section class="bg-grey" style="margin-top: -5px; padding-top: 5px; padding-bottom: 5px;">
 		<div class="container-lg">
-			<div class="row justify-content-center">
+			<div class="row align-items-center gx-0" style="margin-left: -28%;">
+
+			<!-- Image column (left) -->
+			<div class="col-md-6 d-flex justify-content-end"> 
+				<img src="images/LCH-60_2.jpg" 
+					alt="Contact Image" 
+					class="img-fluid rounded shadow-lg" 
+					style="max-width: 80%; transform: scale(0.5);">
+			</div>
+
+			<!-- Form column (right) -->
 			<div class="col-md-6">
-
-				<!-- Heading -->
 				<h3 class="text-center mb-3">Contact</h3>
-
-				<!-- Introductory text -->
 				<p class="text-center">
 				Ready to take the next step? Use the form below or email me directly at 
 				<a href="mailto:lrchesnut@chesnutreede.com"><strong>LRC@chesnutreede.com</strong></a>.
@@ -605,7 +615,6 @@
 				I look forward to collaborating with you!
 				</p>
 
-				<!-- Form -->
 				<form name="contactform" action="contact.php" method="post" class="form-group contact-form">
 				<div class="row">
 					<div class="col-md-6 mb-4">
@@ -623,17 +632,12 @@
 					<textarea id="message" class="form-control" name="message" placeholder="Message" style="height: 150px;" required></textarea>
 				</div>
 
-				<!-- <label class="mb-3">
-					<input type="checkbox" required>
-					<span class="label-body">I agree to all the <a href="#">Terms and Conditions</a></span>
-				</label> -->
-
 				<div class="d-grid mt-3">
 					<button type="submit" name="submit" class="btn btn-dark">Submit</button>
 				</div>
 				</form>
-
 			</div>
+
 			</div>
 		</div>
 	</section>
