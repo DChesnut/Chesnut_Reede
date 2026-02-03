@@ -2,222 +2,209 @@
 <html>
 
 <head>
-	<title>Aurora - Portfolio Bootstrap5 HTML/CSS Website Template</title>
+    <title>Contact - Chesnut Reede: Writing & Editing</title>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="author" content="TemplatesJungle">
-	<meta name="keywords" content="Portfolio, Bootstrap5, HTML/CSS, Website Template">
-	<meta name="description" content="Aurora is a Portfolio Bootstrap5 HTML/CSS Website Template">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="TemplatesJungle">
 
-	<link rel="stylesheet" type="text/css" href="assets/icomoon/icomoon.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/chocolat/css/chocolat.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="assets/icomoon/icomoon.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/chocolat/css/chocolat.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap"
-		rel="stylesheet">
+    <style>
+        /* --- CORE HEADER & LOGO FIXES --- */
+        #header {
+            width: 100% !important;
+            position: relative !important; /* Prevents floating/overlap */
+            background: #ffffff !important; 
+            border-bottom: 1px solid #f1f1f1;
+            display: block !important;
+            z-index: 1001;
+        }
 
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem !important;
+            min-height: 80px;
+        }
+
+        .main-logo img {
+            height: auto;
+            display: block;
+            width: 100%;
+            max-width: 180px; /* Desktop size */
+            transition: max-width 0.3s ease;
+        }
+
+        /* Responsive Scaling for smaller windows */
+        @media (max-width: 1200px) {
+            .main-logo img { max-width: 150px; }
+        }
+
+        @media (max-width: 768px) {
+            .main-logo img { max-width: 120px; } /* iPhone/Small window size */
+            .header-wrap { padding: 0.8rem 1rem !important; }
+        }
+
+        /* --- SECTION OVERLAP PREVENTION --- */
+        section.bg-secondary {
+            position: relative;
+            clear: both !important;
+            padding-top: 100px !important; /* Buffer for the title */
+        }
+
+        @media (max-width: 768px) {
+            section.bg-secondary {
+                padding-top: 60px !important; 
+            }
+            .display-3 { font-size: 2.2rem !important; }
+        }
+
+        /* Spacing & Content Fixes */
+        .padding-xlarge { padding: 60px 0; }
+        
+        .contact-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        @media (min-width: 992px) {
+            .contact-image-wrapper img {
+                max-width: 380px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-	<div id="overlayer">
-		<span class="loader">
-			<span class="loader-inner"></span>
-		</span>
-	</div>
+    <div id="overlayer">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 
-	<!-- <div class="nav nav-overlay">
-		<div class="nav__content">
-			<ul class="nav__list">
-				<li class="nav__list-item mb-2"><a href="#">Home</a></li>
-				<li class="nav__list-item mb-2"><a href="styles.html">Styles <span
-							class="badge bg-dark fs-6">PRO</span></a>
-				</li>
-				<li class="nav__list-item mb-2"><a href="blog.html">Blog <span class="badge bg-dark fs-6">PRO</span></a>
-				</li>
-				<li class="nav__list-item mb-2"><a href="portfolio-masonry.html">Portfolio Masonry <span
-							class="badge bg-dark fs-6">PRO</span></a></li>
-				<li class="nav__list-item mb-2"><a href="single-post.html">Single Post <span
-							class="badge bg-dark fs-6">PRO</span></a></li>
-				<li class="nav__list-item mb-2"><a href="single-portfolio.html">Single Portfolio <span
-							class="badge bg-dark fs-6">PRO</span></a></li>
-				<li class="nav__list-item mb-2"><a href="contact.html">Contact us <span
-							class="badge bg-dark fs-6">PRO</span></a></li>
-				<li class="nav__list-item mb-2"><a href="team.html">Our Team <span
-							class="badge bg-dark fs-6">PRO</span></a>
-				</li>
-				<li class="nav__list-item mb-2"><a href="https://templatesjungle.gumroad.com/l/aurora"
-						class="text-decoration-underline fw-bold" target="_blank">Get PRO Version</a></li>
-			</ul>
-		</div>
-	</div> -->
+    <input id="menu-toggle" type="checkbox" style="display: none;" />
 
-	<div class="nav nav-overlay">
-		<div class="nav__content">
-			<ul class="nav__list">
-				<li class="nav__list-item mb-2 active-nav"><a href="index.html">Home</a></li>
-				<li class="nav__list-item mb-2"><a href="about-me.html">About Me</a></li>
-				<!-- <li class="nav__list-item mb-2"><a href="portfolio-masonry.html">Recent Projects</a></li>
-				<li class="nav__list-item mb-2"><a href="blog.html">Blog</a></li> -->
-				<li class="nav__list-item mb-2"><a href="contact.html">Contact</a></li>
-				<!-- <li class="nav__list-item mb-2"><a href="single-post.html">Single Post</li>
-				<li class="nav__list-item mb-2"><a href="single-portfolio.html">Single Portfolio</a></li> -->
-				<!-- <li class="nav__list-item mb-2"><a href="team.html">Our Team</a></li> -->
-			</ul>
-		</div>
-	</div>
+    <div class="nav nav-overlay">
+        <div class="nav__content">
+            <ul class="nav__list">
+                <li class="nav__list-item mb-2"><a href="index.html">Home</a></li>
+                <li class="nav__list-item mb-2"><a href="about-me.html">About Me</a></li>
+                <li class="nav__list-item mb-2 active-nav"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 
-	<header id="header">
-		<div class="header-wrap" data-aos="fade">
-			<div class="main-logo">
-				<a href="index.html"><img src="images/Chesnut_Reede_Main_Logo-removebg_small.png" title="Chesnut Reede Main Logo"></a>
-			</div><!--main-logo-->
+    <header id="header">
+        <div class="header-wrap d-flex align-items-center justify-content-between">
+            <div class="main-logo">
+                <a href="index.html">
+                    <img src="images/Chesnut_Reede_Main_Logo-removebg.png" 
+                        alt="Chesnut Reede Main Logo"> 
+                </a>
+            </div>
 
-			<nav id="navbar">
-				<input id="menu-toggle" type="checkbox" />
-				<label class="menu-btn" for="menu-toggle">
-					<span></span>
-				</label>
-			</nav>
+            <nav id="navbar">
+                <label class="menu-btn" for="menu-toggle" style="cursor: pointer;">
+                    <span></span>
+                </label>
+            </nav>
+        </div>
+    </header>
 
-		</div><!--header-wrap-->
-	</header>
+    <section class="bg-secondary">
+        <div class="padding-xlarge">
+            <div class="container-lg">
+                <div class="row justify-content-center mt-lg-5" data-aos="zoom-in-up">
+                    <div class="col-md-8 text-center">
+                        <h2 class="display-3 page-title">Contact</h2>
+                        <div class="breadcrumbs">
+                            <span class="item"><a href="index.html">Home /</a></span>
+                            <span class="item">Contact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section class=" bg-secondary">
-		<div class="padding-xlarge">
-			<div class="container-lg">
-				<div class="row justify-content-center mt-5" data-aos="zoom-in-up">
-					<div class="col-md-8 text-center">
-						<h2 class="display-3 page-title">Contact</h2>
-						<div class="breadcrumbs">
-							<span class="item"><a href="index.html">Home /</a></span>
-							<span class="item">Contact</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="bg-grey padding-large">
+        <div class="container-lg">
+            <div class="row align-items-center">
 
+                <div class="col-lg-5 text-center contact-image-wrapper mb-5 mb-lg-0" data-aos="zoom-in-up"> 
+                    <img src="images/LCH-60_2.jpg" alt="Contact Image" class="rounded-4">
+                </div>
 
-	<section class="padding-large">
-		<div class="container-lg">
-			<div class="row justify-content-center">
-			<div class="col-md-6">
+                <div class="col-lg-7 px-lg-5 text-center" data-aos="zoom-in-up">
+                    <h3 class="mb-3">Get In Touch</h3>
+                    <p>
+                        Ready to take the next step? Use the form below or email me directly at 
+                        <a href="mailto:LRC@chesnutreede.com"><strong>LRC@chesnutreede.com</strong></a>.
+                    </p>
+                    <p class="mb-4">I look forward to collaborating with you!</p>
 
-				<!-- Heading -->
-				<!-- <h3 class="text-center mb-3">Contact</h3> -->
+                    <form name="contactform" action="contact.php" method="post" class="form-group contact-form text-start">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Name" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
+                            </div>
+                        </div>
 
-				<!-- Introductory text -->
-				<p class="text-center">
-				Ready to take the next step? Use the form below or email me directly at 
-				<a href="mailto:LRC@chesnutreede.com"><strong>LRC@chesnutreede.com</strong></a>.
-				</p>
-				<p class="text-center mb-4">
-				I look forward to collaborating with you!
-				</p>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" class="form-control" name="message" placeholder="How can I help you?" style="height: 150px;" required></textarea>
+                        </div>
 
-				<!-- Form -->
-				<form name="contactform" action="contact.php" method="post" class="form-group contact-form">
-				<div class="row">
-					<div class="col-md-6 mb-4">
-					<label for="name" class="form-label">Name *</label>
-					<input type="text" id="name" minlength="2" name="name" placeholder="Name" class="form-control" required>
-					</div>
-					<div class="col-md-6 mb-4">
-					<label for="email" class="form-label">Email *</label>
-					<input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
-					</div>
-				</div>
+                        <div class="d-grid mt-3">
+                            <button type="submit" name="submit" class="btn btn-primary btn-large">Send Message</button>
+                        </div>
+                    </form>
+                </div>
 
-				<div class="mb-4">
-					<label for="message" class="form-label">Message *</label>
-					<textarea id="message" class="form-control" name="message" placeholder="Message" style="height: 150px;" required></textarea>
-				</div>
+            </div>
+        </div>
+    </section>
 
-				<!-- <label class="mb-3">
-					<input type="checkbox" required>
-					<span class="label-body">I agree to all the <a href="#">Terms and Conditions</a></span>
-				</label> -->
+    <div id="footer-bottom" class="py-3 bg-primary border-top">
+        <div class="container-lg text-white">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="social-links">
+                        <ul class="d-flex justify-content-center justify-content-md-start list-unstyled m-0 gap-3">
+                            <li><a href="https://www.facebook.com/lorrie.r.chesnut" target="_blank" class="text-white"><i class="icon icon-facebook"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/lorrie-r-chesnut-93bb5948/" target="_blank" class="text-white"><i class="icon icon-linkedin2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <p class="m-0">© 2026 Chesnut Reede LLC</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="d-grid mt-3">
-					<button type="submit" name="submit" class="btn btn-dark">Submit</button>
-				</div>
-				</form>
-
-			</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- <section class="padding-large pt-0">
-		<div class="container-lg">
-			<div class="d-flex flex-wrap justify-content-between contact-detail">
-				<div class="detail-item mb-3">
-					<h4>Call Us</h4>
-					<p>+1650-243-0000</p>
-				</div>
-				<div class="detail-item mb-3">
-					<h4>Mail Us</h4>
-					<a href="mailto:info@yourcompany.com">info@yourcompany.com</a>
-				</div>
-				<div class="detail-item mb-3">
-					<h4>Location</h4>
-					<p>North Melbourne VIC 3051, Australia</p>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<div id="footer-bottom" class="py-3 bg-primary border-top">
-		<div class="container-lg text-white">
-			<div class="row align-items-center">
-				<div class="col-md-6">
-					<div class="social-links">
-						<ul class="justify-content-center justify-content-md-start m-0">
-							<li>
-								<a href="https://www.facebook.com/lorrie.r.chesnut"
-								target="_blank" rel="noopener" class="text-white">
-								<i class="icon fs-5 icon-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.linkedin.com/in/lorrie-r-chesnut-93bb5948/"
-								target="_blank" rel="noopener" class="text-white">
-								<i class="icon fs-5 icon-linkedin2"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6 text-center text-md-end">
-					<div class="copyright">
-						<p class="m-0">© 2026 Chesnut Reede LLC</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-		crossorigin="anonymous"></script>
-	<script src="assets/vendor/chocolat/js/chocolat.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/script.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
-
 </html>

@@ -32,60 +32,84 @@
 <body>
 
 	<div id="overlayer">
-		<span class="loader">
-			<span class="loader-inner"></span>
-		</span>
-	</div>
+    <span class="loader">
+        <span class="loader-inner"></span>
+    </span>
+</div>
 
-	<div class="nav nav-overlay">
-		<div class="nav__content">
-			<ul class="nav__list">
-				<li class="nav__list-item mb-2 active-nav"><a href="index.html">Home</a></li>
-				<li class="nav__list-item mb-2"><a href="about-me.html">About Me</a></li>
-				<!-- <li class="nav__list-item mb-2"><a href="portfolio-masonry.html">Recent Projects</a></li>
-				<li class="nav__list-item mb-2"><a href="blog.html">Blog</a></li> -->
-				<li class="nav__list-item mb-2"><a href="contact.html">Contact</a></li>
-				<!-- <li class="nav__list-item mb-2"><a href="single-post.html">Single Post</li>
-				<li class="nav__list-item mb-2"><a href="single-portfolio.html">Single Portfolio</a></li> -->
-				<!-- <li class="nav__list-item mb-2"><a href="team.html">Our Team</a></li> -->
-			</ul>
-		</div>
-	</div>
+<input id="menu-toggle" type="checkbox" style="display: none;" />
 
-	<header id="header">
-		<div class="header-wrap" data-aos="fade">
-			<div class="main-logo">
-				<a href="index.html"><img src="images/Chesnut_Reede_Main_Logo-removebg_small.png" title="Chesnut Reede Main Logo"></a>
-			</div><!--main-logo-->
+<div class="nav nav-overlay">
+    <style>
+        /* 1. Set the logo to be ready for animation but hidden by default */
+        #nav-menu-logo { 
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; 
+        }
 
-			<nav id="navbar">
-				<input id="menu-toggle" type="checkbox" />
-				<label class="menu-btn" for="menu-toggle">
-					<span></span>
-				</label>
-			</nav>
+        #menu-toggle:checked ~ .nav-overlay #nav-menu-logo { 
+            opacity: 1; 
+            visibility: visible;
+            transition: opacity 0.5s ease-in-out 0.4s, visibility 0s 0.4s;
+        }
+    </style>
 
-		</div><!--header-wrap-->
-	</header>
+    <!-- <div id="nav-menu-logo" style="position: absolute; top: 40px; left: 60px; z-index: 1001;">
+        <a href="index.html">
+            <img src="images/Chesnut_Reede_Main_Logo-removebg.png" 
+                alt="Logo" 
+                style="max-width: 180px; height: auto;">
+        </a>
+    </div> -->
+
+    <div class="nav__content">
+        <ul class="nav__list">
+            <li class="nav__list-item mb-2 active-nav"><a href="index.html">Home</a></li>
+            <li class="nav__list-item mb-2"><a href="about-me.html">About Me</a></li>
+            <li class="nav__list-item mb-2"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<header id="header">
+    <div class="header-wrap d-flex align-items-center justify-content-end" data-aos="fade">
+        <nav id="navbar">
+            <label class="menu-btn" for="menu-toggle">
+                <span></span>
+            </label>
+        </nav>
+    </div>
+</header>
 
 	<section id="billboard" class="jarallax bg-secondary">
 		<div class="container-lg">
-			<div class="row align-items-end">
+			<div class="row align-items-center"> 
 				<div class="col-lg-6" data-aos="zoom-in-up">
 					<div class="banner-content">
-						<div class="banner-header">
-							<h2 class="display-1">Lorrie Chesnut<br />Editor, Writer</h2>
-							<p class="fs-5">I provide professional editing and writing services to enhance your creative and technical writing needs</p>
-							<a href="contact.html" class="btn btn-primary btn-large">Get in touch</a>
+						
+						<div class="logo-wrapper text-center mb-4">
+							<a href="index.html">
+								<img src="images/Chesnut_Reede_Main_Logo-removebg.png" 
+									title="Chesnut Reede Main Logo" 
+									class="img-fluid" 
+									style="max-width: 300px; width: 100%;"> 
+							</a>
 						</div>
+
+						<div class="banner-header text-center">
+							<p class="fs-5">Chesnut Reede was founded on a commitment to storytelling and excellence. I work closely with each client to help you thrive and achieve your goals.</p>
+							<div class="mt-3">
+								<a href="contact.html" class="btn btn-primary btn-large">Get in touch</a>
+							</div>
+						</div>
+
 					</div>
 				</div>
+
 				<div class="col-lg-6" data-aos="zoom-in-up">
-					<img src="images/LCH-25_2.jpg" 
-						alt="Banner" 
-						class="img-fluid rounded" 
-						style="transform: scale(0.65); 
-								box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+					<img src="images/LCH-25_2.jpg" alt="Banner" class="img-fluid rounded-4" 
+						style="transform: scale(0.65); box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
 				</div>
 			</div>
 		</div>
@@ -99,7 +123,7 @@
 			<div class="col-md-4 mb-5 mb-lg-0">
 				<div class="info-box" data-aos="zoom-in-up" data-aos-delay="300">
 				<div class="icon">
-					<iconify-icon icon="mdi:book-open-page-variant"></iconify-icon>
+					<iconify-icon icon="mdi:file-edit-outline"></iconify-icon>
 				</div>
 				<h3>Development Editing</h3>
 				<p>Organize story, improve plot, character, pacing, voice, fact checking and audience relevance.</p>
@@ -132,10 +156,10 @@
 			<div class="col-md-4 mb-5 mb-lg-0">
 				<div class="info-box" data-aos="zoom-in-up" data-aos-delay="1200">
 				<div class="icon">
-					<iconify-icon icon="mdi:account-group"></iconify-icon>
+					<iconify-icon icon="mdi:book-open-page-variant"></iconify-icon>
 				</div>
-				<h3>Religious Content Editing</h3>
-				<p>Ensure accurate, respectful portrayal of religious cultures, groups, and sensitive topics.</p>
+				<h3>Beta Reading</h3>
+				<p>Reading final drafts for inconsistencies to help strengthen manuscripts prior to submission.</p>
 				</div>
 			</div>
 
@@ -170,7 +194,7 @@
 			<div class="row">
 				<div class="section-header align-center mb-5">
 					<span class="text-primary">Achievements</span>
-					<h2 class="display-5 m-0">Awards and Publications</h2>
+					<h2 class="display-5 m-0 dark">Awards and Publications</h2>
 				</div>
 			</div>
 		</div>
@@ -222,512 +246,90 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div class="col-md-4">
-					<div class="card mb-4" data-aos="zoom-in-up" data-aos-delay="1000">
-						<div class="card-body">
-							<span class="card-subtitle mb-2 text-primary">2022</span>
-							<h4 class="card-title text-capitalize">best motion design</h4>
-							<p class="card-text">Breakthrough designer of the year 2022</p>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<section id="testimonials" class="padding-large">
-		<div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-header align-center mb-5">
-						<span class="text-primary">Referrals</span>
+		<div class="container-lg" data-aos="fade-up">
+			<div class="row justify-content-center">
+				<div class="col-lg-10 col-xl-8">
+					
+					<div class="section-header text-center mb-5">
 						<h2 class="display-5 m-0 dark">Testimonials</h2>
 					</div>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-md-12 position-relative">
-					<div class="testimonial-carousel swiper overflow-hidden">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">Lorem ipsum dolor sit amet, elit consectetur
-											adipiscing. Odio tincidunt et, massa, turpis nec dolor posuere tempus. Nulla
-											congue et dolor sit amet, elit consectetur adipiscing.
-										</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Tina Cheney</h3>
-												<span class="author-title text-primary">Environmental Department Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">Ipsum dolor sit amet, elit consectetur adipiscing.
-											Odio tincidunt et turpis nec dolor posuere tempus Nulla congue et dolor sit
-											amet, elit consectetur adipiscing.</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Deb Thornton</h3>
-												<div class="author-title text-primary">Professor of English & Literature</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">"Lorrie has been a great addition to our critique group. 
-											Not only is she an excellent writer in her own right but her concise, accurate, 
-											and kind comments are always on target. Her supportive interactions with the 
-											other writers in our group has been greatly appreciated”</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Lorraine Jeffery</h3>
-												<div class="author-title text-primary">President of Word Weavers: Utah County</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">Lorem ipsum dolor sit amet, elit consectetur
-											adipiscing. Odio tincidunt et, massa, turpis nec dolor posuere tempus. Nulla
-											congue et dolor sit amet, elit consectetur adipiscing.
-										</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Lucas Wolfer</h3>
-												<span class="author-title text-primary">Ceo - Raisins</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">Ipsum dolor sit amet, elit consectetur adipiscing.
-											Odio tincidunt et turpis nec dolor posuere tempus Nulla congue et dolor sit
-											amet, elit consectetur adipiscing.</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Jennie</h3>
-												<div class="author-title text-primary">General Manager</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="card testimonials-inner">
-									<div class="card-body">
-										<p class="card-text mb-2">“Dolor sit amet, elit consectetur adipiscing. Odio
-											tincidunt et, massa, turpis nec dolor posuere tempus. Nulla congue et dolor
-											sit amet, elit consectetur adipiscing.”</p>
-										<div class="testimonial-author">
-											<div class="author-detail">
-												<h3 class="name m-0">Simple</h3>
-												<div class="author-title text-primary">Staff</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
+					<div class="testimonial-single text-center position-relative px-4">
+						<div class="quote-icon mb-4" style="opacity: 0.15;">
+							<svg width="60" height="60" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017V6H21.017V15C21.017 18.3137 18.3307 21 15.017 21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H4.017C3.46472 8 3.017 8.44772 3.017 9V12C3.017 12.5523 2.56928 13 2.017 13H0.017V6H10.017V15C10.017 18.3137 7.33072 21 4.017 21H3.017Z" />
+							</svg>
+						</div>
+
+						<blockquote class="mb-4">
+							<p class="fs-4 fw-light italic text-dark lh-base">
+								"Lorrie has been a great addition to our critique group. Not only is she an excellent writer in her own right, but her <strong>concise, accurate, and kind</strong> comments are always on target. Her supportive interactions with the other writers in our group have been greatly appreciated."
+							</p>
+						</blockquote>
+
+						<div class="author-info">
+							<h4 class="name mb-0 text-primary">Lorraine Jeffery</h4>
+							<span class="text-muted small text-uppercase">President of Word Weavers: Utah County</span>
 						</div>
 					</div>
-					<div class="swiper-pagination"></div>
+
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- <section id="portfolio" class="overflow-hidden padding-large">
-		<div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
-			<div class="row">
-				<div class="col-md-8">
-					<div
-						class="section-header d-flex flex-wrap justify-content-center justify-content-md-start align-items-center mb-2 mb-md-5">
-						<h2 class="display-5 m-0">Recent Projects</h2>
-						<a href="#" class="btn-link ms-0 ms-md-5 text-dark text-decoration-none">View all Projects</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="swiper-buttons">
-						<div class="swiper-button portfolio-carousel-prev">←</div>
-						<div class="swiper-button portfolio-carousel-next">→</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
 
-					<div class="portfolio-carousel swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-6.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Design, Logo</span>
-										<h3 class="fs-4 fw-bold">Magazine front design</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-7.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Product Bottle Design</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-8.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Design</span>
-										<h3 class="fs-4 fw-bold">Magazine & brochure mockup</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-9.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Coffee bottle mockup</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-10.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Product tag mockup</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-11.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Perfume brand identity</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-12.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Coffee bottle mockup</h3>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="swiper-slide">
-								<figure class="portfolio-item">
-									<a href="single-portfolio.html"><img src="images/portfolio-large-13.jpg"
-											class="portfolio-image"></a>
-									<figcaption class="portfolio-title my-3">
-										<span class="text-primary text-uppercase fs-6">Branding</span>
-										<h3 class="fs-4 fw-bold">Product tag mockup</h3>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<!-- <section id="clients" class="bg-grey padding-large">
-		<div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
-			<div class="row">
-				<div class="section-header align-center mb-5">
-					<h2 class="display-5 m-0">Our clients</h2>
-					<span class="text-black-50">We have worked with great clients for which we are very proud.</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 overflow-hidden">
-					<div id="clients-carousel" class="swiper clients-carousel">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide text-center"><img src="images/logo1.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo2.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo3.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo4.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo6.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo2.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-							<div class="swiper-slide text-center"><img src="images/logo4.png" alt="brand logo"
-									class="img-fluid">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<!-- <section id="post-grid" class="padding-large">
+	<section class="bg-grey padding-large">
 		<div class="container-lg">
-			<div class="row">
-				<div class="section-header align-center mb-5">
-					<h2 class="display-5 m-0">Articles & Posts</h2>
-					<span class="text-black-50">Accusan maiores alias conseaut equatur aut perferendi.</span>
-				</div>
-			</div>
-		</div>
-		<div class="container-lg">
-			<div class="row">
-				<div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="300">
-					<figure class="post-item">
-						<a href="#" class="post-link"><img src="images/post-thumb-1.jpg" alt="post"></a>
-						<figcaption class="py-4">
-							<div class="meta-wrap text-white">
-								<span class="meta-category">Graphic Design 2021</span> /
-								<span class="meta-date">July 1, 2021</span>
-							</div>
-							<h3>
-								<a href="single-post.html" class="text-white">Graphic Designing Useful Tips & Best
-									Practices</a>
-							</h3>
-						</figcaption>
-					</figure>
-				</div>
-
-				<div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="600">
-					<figure class="post-item">
-						<a href="#" class="post-link"><img src="images/post-thumb-2.jpg" alt="post"></a>
-						<figcaption class="py-4">
-							<div class="meta-wrap text-white">
-								<span class="meta-category">Graphic Design 2021</span> /
-								<span class="meta-date">July 1, 2021</span>
-							</div>
-							<h3>
-								<a href="single-post.html" class="text-white">Basic typography rules for ui
-									designing</a>
-							</h3>
-						</figcaption>
-					</figure>
-				</div>
-
-				<div class="col-md-4" data-aos="zoom-in-up" data-aos-delay="900">
-					<figure class="post-item">
-						<a href="#" class="post-link"><img src="images/post-thumb-3.jpg" alt="post"></a>
-						<figcaption class="py-4">
-							<div class="meta-wrap text-white">
-								<span class="meta-category">Graphic Design 2021</span> /
-								<span class="meta-date">July 1, 2021</span>
-							</div>
-							<h3>
-								<a href="single-post.html" class="text-white">Top 10 graphic designs review in 2021</a>
-							</h3>
-						</figcaption>
-					</figure>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<!-- <section id="features" class="padding-large pt-0">
-		<div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="milestone text-center">
-						<h3 class="display-1 m-0">12</h3>
-						<p class="text-uppercase">Years of experience</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="milestone text-center">
-						<h3 class="display-1 m-0">320+</h3>
-						<p class="text-uppercase">satisfied clients</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="milestone text-center">
-						<h3 class="display-1 m-0">55</h3>
-						<p class="text-uppercase">employees worldwide</p>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="milestone text-center">
-						<h3 class="display-1 m-0">220+</h3>
-						<p class="text-uppercase">projects completed</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<section class="bg-grey" style="margin-top: -5px; padding-top: 5px; padding-bottom: 5px;">
-		<div class="container-lg">
-			<div class="row align-items-center gx-0" style="margin-left: -28%;">
-
-			<!-- Image column (left) -->
-			<div class="col-md-6 d-flex justify-content-end"> 
-				<img src="images/LCH-60_2.jpg" 
-					alt="Contact Image" 
-					class="img-fluid rounded shadow-lg" 
-					style="max-width: 80%; transform: scale(0.5);">
-			</div>
-
-			<!-- Form column (right) -->
-			<div class="col-md-6">
-				<h3 class="text-center mb-3">Contact</h3>
-				<p class="text-center">
-				Ready to take the next step? Use the form below or email me directly at 
-				<a href="mailto:lrchesnut@chesnutreede.com"><strong>LRC@chesnutreede.com</strong></a>.
-				</p>
-				<p class="text-center mb-4">
-				I look forward to collaborating with you!
-				</p>
-
-				<form name="contactform" action="contact.php" method="post" class="form-group contact-form">
-				<div class="row">
-					<div class="col-md-6 mb-4">
-					<label for="name" class="form-label">Name *</label>
-					<input type="text" id="name" minlength="2" name="name" placeholder="Name" class="form-control" required>
-					</div>
-					<div class="col-md-6 mb-4">
-					<label for="email" class="form-label">Email *</label>
-					<input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
-					</div>
-				</div>
-
-				<div class="mb-4">
-					<label for="message" class="form-label">Message *</label>
-					<textarea id="message" class="form-control" name="message" placeholder="Message" style="height: 150px;" required></textarea>
-				</div>
-
-				<div class="d-grid mt-3">
-					<button type="submit" name="submit" class="btn btn-dark">Submit</button>
-				</div>
-				</form>
-			</div>
-
-			</div>
-		</div>
-	</section>
-
-	<!-- <footer id="footer" class="padding-large bg-primary">
-		<div class="container-lg text-white">
-			<div class="row">
-				<div class="footer-menu col-md-4">
-					<div class="footer-intro">
-						<a href="#" class="logo"><img src="images/Chesnut_Reede_Signature_Light_Small.png"></a>
-					</div>
-					<div class="footer-address mt-4">
-						<p>Just feel free to contact if you wanna collaborate with me, or simply have a conversation.
-						</p>
-						<div class="mail-address">
-							<a href="#" class="text-white fs-3 text-decoration-underline">lrchesnut@chesnutreede.com</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="footer-menu col-6 col-md-2 ms-md-auto">
-					<ul class="list-unstyled">
-						<li><a href="index.html" class="text-white">Home</a></li>
-						<li><a href="#" class="text-white">About</a></li>
-						<li><a href="blog.html" class="text-white">Blog</a></li>
-						<li><a href="single-portfolio.html" class="text-white">Portfolio</a></li>
-						<li><a href="single-post.html" class="text-white">Single Post</a></li>
-					</ul>
-				</div>
-
-				<div class="footer-menu col-6 col-md-2">
-					<ul class="list-unstyled">
-						<li><a href="portfolio-masonry.html" class="text-white">Portfolio Masonry</a></li>
-						<li><a href="team.html" class="text-white">Team</a></li>
-						<li><a href="styles.html" class="text-white">Styles</a></li>
-						<li><a href="contact.html" class="text-white">Contact</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-6">
-					<div class="social-links mt-4 mt-md-0">
-						<ul class="list-unstyled d-flex justify-content-center justify-content-md-start m-0 gap-3">
-						<li>
-							<a href="https://www.facebook.com/lorrie.r.chesnut"
-							target="_blank" rel="noopener" class="text-white">
-							<i class="icon fs-5 icon-facebook"></i>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.linkedin.com/in/lorrie-r-chesnut-93bb5948/"
-							target="_blank" rel="noopener" class="text-white">
-							<i class="icon fs-5 icon-linkedin2"></i>
-							</a>
-						</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer> -->
-
-	<!-- <div id="footer-bottom" class="py-3 bg-primary border-top">
-		<div class="container-lg text-white">
-			<div class="col-md-6">
-				<div class="social-links mt-4 mt-md-0">
-					<ul class="list-unstyled d-flex justify-content-center justify-content-md-start m-0 gap-3">
-					<li>
-						<a href="https://www.facebook.com/lorrie.r.chesnut"
-						target="_blank" rel="noopener" class="text-white">
-						<i class="icon fs-5 icon-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/lorrie-r-chesnut-93bb5948/"
-						target="_blank" rel="noopener" class="text-white">
-						<i class="icon fs-5 icon-linkedin2"></i>
-						</a>
-					</li>
-					</ul>
-				</div>
-			</div>
 			<div class="row align-items-center">
-				<div class="text-center">
-					<div class="copyright">
-						<p class="m-0">© 2026 Chesnut Reede LLC</p>
-					</div>
+
+				<div class="col-lg-5 text-center contact-image-wrapper mb-5 mb-lg-0" data-aos="zoom-in-up"> 
+					<img src="images/LCH-60_2.jpg" 
+						alt="Contact Image" 
+						class="img-fluid rounded-4 shadow" 
+						style="max-width: 80%;">
 				</div>
+
+				<div class="col-lg-7 px-lg-5 text-center" data-aos="zoom-in-up">
+					<h3 class="mb-3">Get In Touch</h3>
+					<p>
+						Ready to take the next step? Use the form below or email me directly at 
+						<a href="mailto:LRC@chesnutreede.com"><strong>LRC@chesnutreede.com</strong></a>.
+					</p>
+					<p class="mb-4">I look forward to collaborating with you!</p>
+
+					<form name="contactform" action="contact.php" method="post" class="form-group contact-form text-start">
+						<div class="row">
+							<div class="col-md-6 mb-4">
+								<label for="name" class="form-label">Name *</label>
+								<input type="text" id="name" name="name" placeholder="Name" class="form-control" required>
+							</div>
+							<div class="col-md-6 mb-4">
+								<label for="email" class="form-label">Email *</label>
+								<input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
+							</div>
+						</div>
+
+						<div class="mb-4">
+							<label for="message" class="form-label">Message *</label>
+							<textarea id="message" class="form-control" name="message" placeholder="How can I help you?" style="height: 150px;" required></textarea>
+						</div>
+
+						<div class="d-grid mt-3">
+							<button type="submit" name="submit" class="btn btn-primary btn-large">Send Message</button>
+						</div>
+					</form>
+				</div>
+
 			</div>
 		</div>
-	</div> -->
+	</section>
 
 	<div id="footer-bottom" class="py-3 bg-primary border-top">
 		<div class="container-lg text-white">
